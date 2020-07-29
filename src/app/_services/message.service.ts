@@ -12,12 +12,20 @@ export class MessageService {
 
   getLastMessages(amount: number): Observable<Message[]> {
     return this.http
-      .get<Message[]>('https://jsonplaceholder.typicode.com/comments', {observe: 'response'})
+      .get<Message[]>('https://jsonplaceholder.typicode.com/comments', {
+        observe: 'response',
+      })
       .pipe(
         map((response) => {
           const amountOfItems = response.body.length;
-          return response.body.slice(amountOfItems-amount, amountOfItems);
+          return response.body.slice(amountOfItems - amount, amountOfItems);
         })
       );
+  }
+
+  getMessage(id: number): Observable<Message> {
+    return this.http.get<Message>(
+      'https://jsonplaceholder.typicode.com/comments/' + id
+    );
   }
 }

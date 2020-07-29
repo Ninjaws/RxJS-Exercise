@@ -14,16 +14,15 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { MemberListComponent } from './member-list/member-list.component';
 import { MemberDetailComponent } from './member-detail/member-detail.component';
-import { MemberService } from './_services/member.service';
 import { MemberCardComponent } from './member-card/member-card.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageCardComponent } from './message-card/message-card.component';
 import { PostCardComponent } from './post-card/post-card.component';
 import { MessageDetailComponent } from './message-detail/message-detail.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
-import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { appRoutes } from './routes';
+import { MessageDetailResolver } from './_resolvers/message-detail.resolver';
+import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 
 @NgModule({
    declarations: [
@@ -52,8 +51,8 @@ import { appRoutes } from './routes';
       RouterModule.forRoot(appRoutes)
    ],
    providers: [
-     // MemberDetailResolver
-
+      MemberDetailResolver,
+      MessageDetailResolver
    ],
    bootstrap: [
       AppComponent

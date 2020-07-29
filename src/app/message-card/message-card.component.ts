@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Message } from '../_models/message';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-message-card',
@@ -8,9 +9,17 @@ import { Message } from '../_models/message';
 })
 export class MessageCardComponent implements OnInit {
   @Input() message: Message;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    console.log(this.message.id);
+  }
+
+  onClick()
+  {
+    const routerString = '/messages/' + this.message.id.toString().toLowerCase();
+    console.log(routerString);
+    this.router.navigate([routerString]);
   }
 
 }
