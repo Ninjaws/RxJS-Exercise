@@ -20,6 +20,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageCardComponent } from './message-card/message-card.component';
 import { PostCardComponent } from './post-card/post-card.component';
+import { MessageDetailComponent } from './message-detail/message-detail.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
+import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
+import { appRoutes } from './routes';
 
 @NgModule({
    declarations: [
@@ -33,7 +37,9 @@ import { PostCardComponent } from './post-card/post-card.component';
       MemberCardComponent,
       MessageCardComponent,
       PostCardComponent,
-      MemberDetailComponent
+      MemberDetailComponent,
+      MessageDetailComponent,
+      PostDetailComponent
    ],
    imports: [
       BrowserModule,
@@ -43,13 +49,12 @@ import { PostCardComponent } from './post-card/post-card.component';
       MatCardModule,
       MatRadioModule,
       FormsModule,
-      RouterModule.forRoot([ 
-      { path: '', component: HomeComponent },
-      { path: 'members', component: MemberListComponent },
-      { path: 'messages', component: MessageListComponent },
-      { path: 'posts', component: PostListComponent}])
+      RouterModule.forRoot(appRoutes)
    ],
-   providers: [],
+   providers: [
+     // MemberDetailResolver
+
+   ],
    bootstrap: [
       AppComponent
    ]

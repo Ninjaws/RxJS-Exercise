@@ -16,7 +16,7 @@ export class MemberCardComponent implements OnInit {
 
   onClick()
   {
-    const routerString = '/members/' + this.member.username.toLowerCase();
+    const routerString = '/members/' + this.member.id.toString().toLowerCase();
     this.router.navigate([routerString]);
   }
 

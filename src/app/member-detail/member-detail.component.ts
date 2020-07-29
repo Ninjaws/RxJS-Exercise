@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Member } from '../_models/member';
+import { ActivatedRoute } from '@angular/router';
+import { MemberService } from '../_services/member.service';
 
 @Component({
   selector: 'app-member-detail',
@@ -7,10 +9,14 @@ import { Member } from '../_models/member';
   styleUrls: ['./member-detail.component.css']
 })
 export class MemberDetailComponent implements OnInit {
-  @Input() member: Member;
-  constructor() { }
+  member: Member;
+  constructor(private route: ActivatedRoute, private memberService: MemberService) { }
 
   ngOnInit() {
+
+    this.route.data.subscribe(data => {
+      this.member = data['member'];
+     });
   }
 
 }

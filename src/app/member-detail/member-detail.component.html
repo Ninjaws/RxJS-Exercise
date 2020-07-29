@@ -1,3 +1,7 @@
-<p>
-  member-detail works!
-</p>
+<mat-card>
+  <mat-card-header>Username: {{member.username}}</mat-card-header>
+  <mat-card-subtitle>Id: {{member.id}}</mat-card-subtitle>
+  <mat-card-content>Name: {{member.name}} <br> 
+                    City: {{member.address.city}} <br>
+                   Phone: {{member.phone}}</mat-card-content>
+</mat-card>

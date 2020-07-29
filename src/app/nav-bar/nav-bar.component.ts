@@ -18,7 +18,6 @@ export class NavBarComponent implements OnInit {
 
   selectTab(id: any) {
     this.tabContent = this.tabs[id.itemIndex];
-    console.log(id.itemData);
     const routerString = '/' + id.itemData.toLowerCase();
     this.router.navigate([routerString]);
   }
