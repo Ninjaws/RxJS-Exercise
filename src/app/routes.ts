@@ -7,6 +7,8 @@ import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { Routes } from '@angular/router';
 import { MessageDetailResolver } from './_resolvers/message-detail.resolver';
 import { MessageDetailComponent } from './message-detail/message-detail.component';
+import { PostDetailResolver } from './_resolvers/post-detail.resolver';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 
 export const appRoutes: Routes = [
@@ -21,7 +23,7 @@ export const appRoutes: Routes = [
          { path: 'posts', component: PostListComponent},
          { path: 'members/:id', component: MemberDetailComponent, resolve: {member: MemberDetailResolver}},
          { path: 'messages/:id', component: MessageDetailComponent, resolve: {message: MessageDetailResolver}},
-         { path: 'posts/:id', component: PostListComponent}
+         { path: 'posts/:id', component: PostDetailComponent, resolve: {post: PostDetailResolver}}
     ] },
 
     { path: '**', redirectTo: '', pathMatch: 'full' }

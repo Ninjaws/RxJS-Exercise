@@ -12,10 +12,10 @@ export class MessageDetailResolver implements Resolve<Message> {
   resolve(route: ActivatedRouteSnapshot): Observable<Message> {
     
     return this.messageService.getMessage(route.params['id']).pipe(
-      /*catchError(error => {
+      catchError(error => {
           this.router.navigate(['/messages']);
           return of(null);
-      })*/
+      })
     );
   }
 }

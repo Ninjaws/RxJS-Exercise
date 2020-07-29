@@ -12,7 +12,6 @@ export class MessageCardComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    console.log(this.message.id);
   }
 
   onClick()

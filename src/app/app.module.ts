@@ -23,6 +23,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { appRoutes } from './routes';
 import { MessageDetailResolver } from './_resolvers/message-detail.resolver';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
+import { PostDetailResolver } from './_resolvers/post-detail.resolver';
 
 @NgModule({
    declarations: [
@@ -52,7 +53,8 @@ import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
    ],
    providers: [
       MemberDetailResolver,
-      MessageDetailResolver
+      MessageDetailResolver,
+      PostDetailResolver
    ],
    bootstrap: [
       AppComponent
