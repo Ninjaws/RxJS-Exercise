@@ -1,0 +1,13 @@
+<div class="flex-container">
+
+  <div>
+    <a [routerLink]="['']">Home</a>
+  </div>
+  
+  <div id="tabs">
+    <dx-tabs [dataSource]="tabs" (onItemClick)="selectTab($event)">
+    </dx-tabs>
+  </div> 
+  
+</div>
+  

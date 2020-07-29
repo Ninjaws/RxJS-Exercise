@@ -1,0 +1,13 @@
+
+<h1>
+  List of members
+</h1>
+
+
+<div class="container mt-3">
+  <div class="row">
+    <div *ngFor="let member of members" class="col-lg-2 col-md-3 col-sm-6">
+      <app-member-card [member]="member"> </app-member-card>
+    </div>
+  </div>
+</div>
