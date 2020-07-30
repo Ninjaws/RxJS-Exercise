@@ -1,14 +1,14 @@
 import { HomeComponent } from './home/home.component';
-import { MemberListComponent } from './member-list/member-list.component';
-import { MessageListComponent } from './message-list/message-list.component';
-import { PostListComponent } from './post-list/post-list.component';
-import { MemberDetailComponent } from './member-detail/member-detail.component';
+import { MemberListComponent } from './members/member-list/member-list.component';
+import { MessageListComponent } from './messages/message-list/message-list.component';
+import { PostListComponent } from './posts/post-list/post-list.component';
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { Routes } from '@angular/router';
 import { MessageDetailResolver } from './_resolvers/message-detail.resolver';
-import { MessageDetailComponent } from './message-detail/message-detail.component';
+import { MessageDetailComponent } from './messages/message-detail/message-detail.component';
 import { PostDetailResolver } from './_resolvers/post-detail.resolver';
-import { PostDetailComponent } from './post-detail/post-detail.component';
+import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 
 
 export const appRoutes: Routes = [

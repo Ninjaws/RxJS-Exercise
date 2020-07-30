@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { map, switchMap, tap, filter } from 'rxjs/operators';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 import { Message } from '../_models/message';
 import { Observable } from 'rxjs';
 

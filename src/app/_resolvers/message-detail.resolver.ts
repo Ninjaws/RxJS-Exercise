@@ -10,11 +10,10 @@ export class MessageDetailResolver implements Resolve<Message> {
   constructor(private messageService: MessageService, private router: Router) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<Message> {
-    
     return this.messageService.getMessage(route.params['id']).pipe(
-      catchError(error => {
-          this.router.navigate(['/messages']);
-          return of(null);
+      catchError((error) => {
+        this.router.navigate(['/messages']);
+        return of(null);
       })
     );
   }

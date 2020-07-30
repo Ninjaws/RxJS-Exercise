@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Member } from '../_models/member';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { map, filter, switchMap, tap } from 'rxjs/operators';
 import { Observable, from } from 'rxjs';
 
 @Injectable({

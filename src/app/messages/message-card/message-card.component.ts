@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Message } from '../_models/message';
+import { Message } from '../../_models/message';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +17,6 @@ export class MessageCardComponent implements OnInit {
   onClick()
   {
     const routerString = '/messages/' + this.message.id.toString().toLowerCase();
-    console.log(routerString);
     this.router.navigate([routerString]);
   }
 

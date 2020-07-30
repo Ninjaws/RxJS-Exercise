@@ -1,3 +1,4 @@
+import { Message } from './message';
 
 export class Post{
     userId: number;
@@ -5,4 +6,5 @@ export class Post{
     id: number;
     title: string;
     body: string;
+    messages: Message[];
 }

@@ -10,11 +10,10 @@ export class MemberDetailResolver implements Resolve<Member> {
   constructor(private memberService: MemberService, private router: Router) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<Member> {
-
     return this.memberService.getMember(route.params['id']).pipe(
-      catchError(error => {
-          this.router.navigate(['/members']);
-          return of(null);
+      catchError((error) => {
+        this.router.navigate(['/members']);
+        return of(null);
       })
     );
   }

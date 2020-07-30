@@ -10,11 +10,10 @@ export class PostDetailResolver implements Resolve<Post> {
   constructor(private postService: PostService, private router: Router) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<Post> {
-    
     return this.postService.getPost(route.params['id']).pipe(
-      catchError(error => {
-          this.router.navigate(['/posts']);
-          return of(null);
+      catchError((error) => {
+        this.router.navigate(['/posts']);
+        return of(null);
       })
     );
   }
