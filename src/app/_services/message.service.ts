@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { map, switchMap, tap, filter } from 'rxjs/operators';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Message } from '../_models/message';
 import { Observable } from 'rxjs';
@@ -27,5 +27,15 @@ export class MessageService {
     return this.http.get<Message>(
       'https://jsonplaceholder.typicode.com/comments/' + id
     );
+  }
+
+  getMessagesOfPost(postId: number): Observable<Message[]> {
+    return this.http
+      .get<Message[]>('http://jsonplaceholder.typicode.com/comments')
+      .pipe(
+        map((messages) => {
+          return messages.filter((message) => message.postId === postId);
+        })
+      );
   }
 }
